@@ -2,9 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 interface ITask {
   task: string;
-  date: Date;
+  createAt: Date;
   resolved: boolean;
-  id: string;
 }
 
 interface ITodoListSlice<T> {
@@ -31,7 +30,9 @@ export const todoSlice = createSlice({
     }),
     removeTask: (state, action) => ({
       ...state,
-      todoList: [...state.todoList].filter((item) => item.id !== action.payload)
+      todoList: [...state.todoList].filter(
+        (item, index) => index !== action.payload
+      )
     }),
     getTasksFromLocal: (state, action) => ({
       ...state,
