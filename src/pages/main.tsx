@@ -9,11 +9,6 @@ export const Main = () => {
   const [localTodos, setLocalTodos] = useLocalStorageHook(user, []);
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   console.log(todoList);
-  //   console.log(localTodos);
-  // }, [todoList]);
-
   useEffect(() => {
     dispatch(getTasksFromLocal(localTodos));
   }, []);
@@ -23,7 +18,7 @@ export const Main = () => {
   }, [todoList]);
 
   return (
-    <div>
+    <div className='main'>
       <h1>Todo List</h1>
       <TodoAdd />
     </div>

@@ -8,10 +8,8 @@ import { ProtectedRoute } from '../protected-route/protected-route';
 import { Login } from '../../pages/login';
 
 export const App = () => {
-  // const { user, todoList } = useSelector((store) => store.todo);
-
   return (
-    <div className={style.app}>
+    <div className="app">
       <Routes>
         <Route
           path="/"
@@ -23,8 +21,6 @@ export const App = () => {
         ></Route>
         <Route path="/login" element={<Login />}></Route>
       </Routes>
-      {/* <h1>Todo List</h1>
-      <TodoAdd /> */}
     </div>
   );
 };

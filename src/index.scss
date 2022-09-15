@@ -1,13 +1,46 @@
+@import "./scss/mixins.scss";
+@import "./scss/variables.scss";
+
 body {
   margin: 0 auto;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: $backgroundGrey;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.app {
+  @include Flex;
+}
+
+.main {
+  @include Flex;
+  & h1 {
+    text-align: center;
+  }
+}
+
+.login {
+  @include Flex;
+  gap: 10px;
+  height: 100%;
+  width: 100%;
+  padding-top: 30%;
+  & h1 {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  & input {
+    @include Input;
+  }
+  & button {
+    @include Button;
+  }
 }
