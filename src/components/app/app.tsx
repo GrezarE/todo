@@ -8,11 +8,7 @@ import { ProtectedRoute } from '../protected-route/protected-route';
 import { Login } from '../../pages/login';
 
 export const App = () => {
-  const { user, todoList } = useSelector((store) => store.todo);
-
-  useEffect(() => {
-    console.log(todoList);
-  }, [todoList]);
+  // const { user, todoList } = useSelector((store) => store.todo);
 
   return (
     <div className={style.app}>
