@@ -1,0 +1,20 @@
+@import "../scss/variables.scss";
+@import "../scss/mixins.scss";
+
+.form {
+    @include Flex;
+    gap: 10px;
+    height: 50vh;
+    width: 100%;
+    & h1 {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+    & input {
+        @include Input;
+    }
+    & button {
+        @include Button;
+    }
+}

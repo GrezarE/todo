@@ -1,5 +1,4 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { Action, ActionCreator } from 'redux';
 import { todoReducer } from './todoSlice';
 
 export const store = configureStore({

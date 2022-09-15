@@ -1,11 +1,9 @@
-.app {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+@import "../../scss/mixins.scss";
 
+.app {
+    @include Flex;
     & h1 {
         margin: 0;
-        padding: 20px 0 0 0;
+        padding: 20px 0 20px 0;
     }
 }

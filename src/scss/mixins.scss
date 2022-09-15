@@ -1,0 +1,30 @@
+@mixin Button {
+    background-color: $blue;
+    border: 1px solid $blue;
+    border-radius: 5px;
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: 1s;
+}
+
+@mixin Input {
+    border: 1px solid $grey;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0 5px 0 5px;
+}
+
+@mixin Flex($align: center, $justify: center, $direction: column) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+@mixin ScreenSize($size: 320px) {
+    @media (min-width: $size) {
+        @content;
+    }
+}
