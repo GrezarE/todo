@@ -34,6 +34,19 @@ export const todoSlice = createSlice({
         (item, index) => index !== action.payload
       )
     }),
+    resolveTast: (state, action) => ({
+      ...state,
+      todoList: [...state.todoList].map((item, index) => {
+        if (index === action.payload) {
+          const newItem = {
+            ...item,
+            resolved: true
+          };
+          return newItem;
+        }
+        return item;
+      })
+    }),
     getTasksFromLocal: (state, action) => ({
       ...state,
       todoList: action.payload
@@ -41,6 +54,6 @@ export const todoSlice = createSlice({
   }
 });
 
-export const { addUser, addTask, removeTask, getTasksFromLocal } =
+export const { addUser, addTask, removeTask, getTasksFromLocal, resolveTast } =
   todoSlice.actions;
 export const todoReducer = todoSlice.reducer;

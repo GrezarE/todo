@@ -1,4 +1,5 @@
 @import "../../scss/variables.scss";
+@import "../../scss/mixins.scss";
 
 .task {
     width: 100%;
@@ -26,5 +27,31 @@
         border-style: solid;
         border-color: $black;
         border-width: 0 1px 1px 0;
+        @include Flex;
+        gap: 1px;
+        & button {
+            @include Button;
+            font-size: 0.5rem;
+            width: 90%;
+            transition: 1s;
+        }
+        & .delete {
+            background-color: $red;
+            border-color: $red;
+        }
+        & .resolve {
+            background-color: $green;
+            border-color: $green;
+        }
+
+        & button:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+        }
     }
+}
+
+.task_resolved {
+    composes: task;
+    background-color: $resolved;
 }
