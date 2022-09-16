@@ -1,5 +1,4 @@
 import { Navigate, useLocation } from 'react-router-dom';
-
 import { useSelector } from '../../redux/hooks';
 
 export const ProtectedRoute = ({ children }: { children: JSX.Element }) => {

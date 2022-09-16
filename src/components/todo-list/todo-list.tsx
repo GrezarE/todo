@@ -5,7 +5,6 @@ import style from './todo-list.module.scss';
 
 export const TodoList = () => {
   const { todoList } = useSelector((store) => store.todo);
-  console.log(todoList);
 
   return (
     <ul className={style.grid}>
