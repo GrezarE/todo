@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { TodoAdd } from '../components/todo-add/todo-add';
+import { TodoList } from '../components/todo-list/todo-list';
 import { useLocalStorageHook } from '../hooks/localHook';
 import { useDispatch, useSelector } from '../redux/hooks';
 import { getTasksFromLocal } from '../redux/todoSlice';
@@ -21,6 +22,7 @@ export const Main = () => {
     <div className='main'>
       <h1>Todo List</h1>
       <TodoAdd />
+      <TodoList />
     </div>
   );
 };

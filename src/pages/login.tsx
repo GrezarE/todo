@@ -1,7 +1,7 @@
 import React, { FormEventHandler, useState, ChangeEventHandler } from 'react';
 import { useDispatch, useSelector } from '../redux/hooks';
 import { addUser } from '../redux/todoSlice';
-import { Link, Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 export const Login = () => {
   const dispatch = useDispatch();
