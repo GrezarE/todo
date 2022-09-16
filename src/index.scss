@@ -16,6 +16,8 @@ code {
 
 .app {
   @include Flex;
+  margin: auto;
+  max-width: 1440px;
 }
 
 .main {
@@ -24,6 +26,9 @@ code {
   width: 100%;
   & h1 {
     text-align: center;
+    margin: 0;
+    padding: 0 0 15px 0;
+    font-size: 3rem;
   }
 }
 
@@ -38,11 +43,17 @@ code {
     margin: 0;
     text-align: center;
     font-size: 1.2rem;
+    @include ScreenSize($size: 768px) {
+      font-size: 2.5rem;
+    }
   }
   & input {
     @include Input;
   }
   & button {
     @include Button;
+  }
+  @include ScreenSize($size: 500px) {
+    padding-top: 150px;
   }
 }

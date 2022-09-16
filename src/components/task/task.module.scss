@@ -2,56 +2,81 @@
 @import "../../scss/mixins.scss";
 
 .task {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 10% 20% 20% 20% 30%;
-    list-style: none;
+  width: 98%;
+  display: grid;
+  grid-template-columns: 10% 20% 20% 20% 30%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-style: solid;
+  border-color: $black;
+  border-width: 1px 0 0 1px;
+
+  & p {
     padding: 0;
     margin: 0;
+    text-align: center;
     border-style: solid;
     border-color: $black;
-    border-width: 1px 0 0 1px;
-
-    & p {
-        padding: 0;
-        margin: 0;
-        text-align: center;
-        border-style: solid;
-        border-color: $black;
-        border-width: 0 1px 1px 0;
-        font-size: 0.6rem;
-        line-height: 1.5;
+    border-width: 0 1px 1px 0;
+    font-size: 0.6rem;
+    line-height: 1.5;
+    @include ScreenSize($size: 768px) {
+      font-size: 0.8rem;
     }
-
-    & div {
-        border-style: solid;
-        border-color: $black;
-        border-width: 0 1px 1px 0;
-        @include Flex;
-        gap: 1px;
-        & button {
-            @include Button;
-            font-size: 0.5rem;
-            width: 90%;
-            transition: 1s;
-        }
-        & .delete {
-            background-color: $red;
-            border-color: $red;
-        }
-        & .resolve {
-            background-color: $green;
-            border-color: $green;
-        }
-
-        & button:hover {
-            cursor: pointer;
-            transform: scale(1.05);
-        }
+    @include ScreenSize($size: 1280px) {
+      font-size: 1.2rem;
     }
+  }
+
+  & div {
+    border-style: solid;
+    border-color: $black;
+    border-width: 0 1px 1px 0;
+    @include Flex;
+    gap: 1px;
+    padding: 1px;
+    @include ScreenSize($size: 768px) {
+      flex-direction: row;
+      padding: 4px;
+      gap: 4px;
+    }
+    & button {
+      @include Button;
+      font-size: 0.5rem;
+      width: 90%;
+      transition: 1s;
+      @include ScreenSize($size: 768px) {
+        font-size: 0.8rem;
+      }
+      @include ScreenSize($size: 1280px) {
+        font-size: 1.2rem;
+      }
+    }
+    & .delete {
+      background-color: $red;
+      border-color: $red;
+    }
+    & .resolve {
+      background-color: $green;
+      border-color: $green;
+    }
+    & button:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+    & .resolved {
+      background-color: $grey;
+      border-color: $grey;
+    }
+    & .resolved:hover {
+      transform: scale(1);
+      cursor: auto;
+    }
+  }
 }
 
 .task_resolved {
-    composes: task;
-    background-color: $resolved;
+  composes: task;
+  background-color: $resolved;
 }

@@ -24,7 +24,11 @@ export const Task = (task: any) => {
         <button className={style.delete} onClick={onRemove}>
           Удалить
         </button>
-        <button className={style.resolve} onClick={onResolve}>
+        <button
+          className={status ? style.resolved : style.resolve}
+          onClick={onResolve}
+          disabled={status ? true : false}
+        >
           Выполнено
         </button>
       </div>
