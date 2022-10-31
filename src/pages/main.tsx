@@ -19,7 +19,7 @@ export const Main = () => {
   }, [todoList]);
 
   return (
-    <div className='main'>
+    <div className='main' data-testid="main">
       <h1>Todo List</h1>
       <TodoAdd />
       <TodoList />

@@ -22,7 +22,7 @@ export const Login = () => {
   };
 
   return (
-    <form onSubmit={onSubmit} className="login">
+    <form onSubmit={onSubmit} className="login" data-testid="login">
       <h1>Выбор пользователя</h1>
       <input onChange={onChange}></input>
       <button type="submit">Войти</button>

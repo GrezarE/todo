@@ -6,7 +6,7 @@ import { Login } from '../../pages/login';
 
 export const App = () => {
   return (
-    <div className="app">
+    <div className="app" >
       <Routes>
         <Route
           path="/"
