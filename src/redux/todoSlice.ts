@@ -1,17 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-interface ITask {
+export interface ITask {
   task: string;
   createAt: Date;
   resolved: boolean;
 }
 
-interface ITodoListSlice<T> {
+export interface ITodoListSlice<T> {
   user: string;
   todoList: T[];
 }
 
-const initialState: ITodoListSlice<ITask> = {
+export const initialState: ITodoListSlice<ITask> = {
   user: '',
   todoList: []
 };
